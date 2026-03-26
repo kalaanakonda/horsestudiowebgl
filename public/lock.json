@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "app": "ditherking",
+  "exportedAt": "2026-03-13T15:24:34.509Z",
+  "image": {
+    "source": "replace-with-your-own-glb-or-gltf-url",
+    "note": "For 3D reproduction in other environments, provide your own hosted GLB/GLTF URL and keep runtime.model values."
+  },
+  "viewport": {
+    "auto": true,
+    "width": 900,
+    "height": 620
+  },
+  "controls": {
+    "algorithm": "bayer",
+    "threshold": 145,
+    "sampleStep": 2,
+    "shape": "dot",
+    "effectMode": "simple",
+    "glyphSet": "DITHER01#",
+    "highlightRadius": 0.16,
+    "highlightColor": "#00ff00",
+    "circleColor": "#00ff00",
+    "circleBlur": 12,
+    "animateInCircle": true,
+    "candlestickDrift": 0.6,
+    "candlestickJitter": 0.8,
+    "particleSize": 2,
+    "colorMode": "mono",
+    "shapeResolution": 2,
+    "pulseEnabled": false,
+    "pulseMinSize": 0.9,
+    "pulseMaxSize": 1.8,
+    "pulseMinDensity": 0.25,
+    "pulseMaxDensity": 1,
+    "pulseSpeed": 1,
+    "organicThreshold": 0.55,
+    "organicJitter": 0.85,
+    "bgColor": "#ffffff",
+    "ditherColor": "#101010",
+    "black": 0,
+    "mid": 4,
+    "white": 32,
+    "radius": 0.18,
+    "strength": 1,
+    "returnForce": 0.08,
+    "damping": 0.9,
+    "smoothing": 0.2
+  },
+  "runtime": {
+    "rendererMode": "auto",
+    "sourceKind": "model",
+    "viewport": {
+      "zoom": 0.44999999999999996,
+      "panX": 0,
+      "panY": 0,
+      "auto": true,
+      "width": 900,
+      "height": 620
+    },
+    "model": {
+      "tiltStrength": 1.3,
+      "ditherBackground": false,
+      "posX": 0,
+      "posY": -0.78,
+      "posZ": 0,
+      "rotXDeg": 0,
+      "rotYDeg": 0,
+      "rotZDeg": 0
+    }
+  }
+}

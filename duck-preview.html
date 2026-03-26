@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Duck GLB Preview</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <style>
+    :root {
+      --bg-a: #f5f7ff;
+      --bg-b: #d8ebff;
+      --panel: rgba(255, 255, 255, 0.8);
+      --text: #0f172a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Avenir Next", "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 15% 20%, #ffffff 0%, transparent 45%),
+        radial-gradient(circle at 80% 80%, #c9e7ff 0%, transparent 45%),
+        linear-gradient(140deg, var(--bg-a), var(--bg-b));
+      display: grid;
+      place-items: center;
+      padding: 16px;
+    }
+    .card {
+      width: min(100%, 980px);
+      height: min(88vh, 760px);
+      border-radius: 22px;
+      background: var(--panel);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 20px 80px rgba(15, 23, 42, 0.18);
+      overflow: hidden;
+      display: grid;
+      grid-template-rows: auto 1fr;
+    }
+    .head {
+      padding: 14px 18px;
+      border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+      font-size: 14px;
+      letter-spacing: 0.02em;
+    }
+    model-viewer {
+      width: 100%;
+      height: 100%;
+      --progress-bar-color: #1d4ed8;
+      background: radial-gradient(circle at 50% 30%, #eef8ff 0%, #dbeeff 60%, #c6e4ff 100%);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="head">Duck.glb interactive preview (drag to rotate, scroll to zoom)</div>
+    <model-viewer
+      src="./Duck.glb"
+      alt="Duck 3D model"
+      camera-controls
+      auto-rotate
+      shadow-intensity="1.1"
+      exposure="1"
+      tone-mapping="aces"
+      environment-image="neutral"
+      ar
+    ></model-viewer>
+  </div>
+</body>
+</html>

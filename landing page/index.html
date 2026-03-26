@@ -1,0 +1,325 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horse Studio / Simple By Default</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap');
+
+        :root {
+            --bg: #060606;
+            --panel: rgba(255, 255, 255, 0.08);
+            --line: rgba(255, 255, 255, 0.16);
+            --text: #ffffff;
+            --text-dim: #b5b5b5;
+            --text-soft: #7a7a7a;
+            --mono: 'JetBrains Mono', monospace;
+            --sans: 'Inter', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: var(--sans);
+            color: var(--text);
+            background: #050505;
+            display: flex;
+            justify-content: center;
+        }
+
+        .bg-video {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -3;
+            filter: none;
+        }
+
+
+        .shell {
+            width: min(1260px, 94vw);
+            margin: 34px 0;
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            overflow: hidden;
+            background: rgba(0, 0, 0, 0.08);
+            position: relative;
+        }
+
+        .shell::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 88px;
+            height: 1px;
+            background: var(--line);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .shell::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 51.22%;
+            width: 1px;
+            background: var(--line);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--line);
+            padding: 12px 18px;
+            font-family: var(--mono);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.45);
+            position: relative;
+        }
+
+        .top span {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .top::after {
+            content: none;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: 1.05fr 1fr;
+            min-height: 76vh;
+        }
+
+        .left {
+            padding: 38px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 18px;
+        }
+
+        .horse-icon {
+            width: 44px;
+            height: 44px;
+            margin-bottom: 8px;
+            opacity: 0.95;
+        }
+
+        .horse-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .eyebrow {
+            font-family: var(--mono);
+            font-size: 10px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        h1 {
+            font-size: clamp(28px, 3.8vw, 50px);
+            line-height: 1;
+            letter-spacing: -0.03em;
+            max-width: 560px;
+        }
+
+        .body {
+            font-size: 14px;
+            line-height: 1.65;
+            color: rgba(255, 255, 255, 0.74);
+            max-width: 560px;
+        }
+
+        .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .chip {
+            font-family: var(--mono);
+            font-size: 9px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 999px;
+            padding: 4px 8px;
+            color: rgba(255, 255, 255, 0.72);
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .cta-row {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            font-family: var(--mono);
+            font-size: 10px;
+            letter-spacing: 0.09em;
+            text-transform: uppercase;
+            border: 1px solid #fff;
+            border-radius: 999px;
+            padding: 9px 13px;
+            color: #060606;
+            background: #ffffff;
+            transition: all 0.2s ease;
+        }
+
+        .cta:hover {
+            border-color: #fff;
+            background: #ececec;
+            transform: translateY(-1px);
+        }
+
+        .note {
+            font-family: var(--mono);
+            font-size: 9px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.42);
+            border-top: 1px solid rgba(255, 255, 255, 0.14);
+            padding-top: 12px;
+        }
+
+        .right {
+            padding: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+        }
+
+        .preview {
+            width: 100%;
+            height: 100%;
+            min-height: 500px;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.24);
+            background: transparent;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 20px 44px rgba(0, 0, 0, 0.35);
+        }
+
+
+        .preview video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transform: scale(1.1);
+            transform-origin: center;
+            filter: brightness(1.08) contrast(1.04) saturate(1.04);
+        }
+
+        .preview-label {
+            position: absolute;
+            left: 14px;
+            bottom: 12px;
+            z-index: 2;
+            font-family: var(--mono);
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: rgba(255, 255, 255, 0.82);
+            background: rgba(0, 0, 0, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.24);
+            border-radius: 999px;
+            padding: 4px 8px;
+        }
+
+        @media (max-width: 980px) {
+            .layout {
+                grid-template-columns: 1fr;
+            }
+
+            .left {
+                padding: 28px;
+                border-right: 0;
+                border-bottom: 1px solid var(--line);
+            }
+
+            .right {
+                padding: 16px;
+            }
+
+            .preview {
+                min-height: 380px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <video class="bg-video" autoplay muted loop playsinline>
+        <source src="file:///Users/nrgyg/Downloads/kling_20260324_%E4%BD%9C%E5%93%81_shot_1_1s__6043_0.webm" type="video/webm" />
+    </video>
+    <div class="shell">
+        <div class="top">
+            <div>Horse Studio / <span>Landing</span></div>
+            <div><span>No Account</span> / Free Forever</div>
+        </div>
+
+        <div class="layout">
+            <section class="left">
+                <div class="horse-icon" aria-hidden="true">
+                    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13 18 L24 10 L30 15 L34 10 L47 18 L42 28 L42 42 L32 53 L22 42 L22 28 Z" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M22 28 C26 30, 38 30, 42 28" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <p class="eyebrow">Horse Studio App</p>
+                <h1>WebGL, one command away.</h1>
+                <p class="body">
+                    Horse Studio keeps things simple: run it locally, open the app, and start building.
+                    No account required, no payment gate, no onboarding friction. Just launch and create.
+                </p>
+
+                <div class="meta">
+                    <span class="chip">No Login</span>
+                    <span class="chip">Free Forever</span>
+                    <span class="chip">Fast Setup</span>
+                </div>
+
+                <div class="cta-row">
+                    <a class="cta" href="http://localhost:5173/voice-agent" target="_blank" rel="noopener">Open Horse Studio <span>→</span></a>
+                </div>
+
+                <p class="note">Start command: npm run dev / Route: http://localhost:5173/voice-agent</p>
+            </section>
+
+            <section class="right">
+                <div class="preview">
+                    <video autoplay muted loop playsinline>
+                        <source src="file:///Users/nrgyg/Documents/unicc.mp4" type="video/mp4" />
+                    </video>
+                    <p class="preview-label">Live Product Preview</p>
+                </div>
+            </section>
+        </div>
+    </div>
+</body>
+</html>

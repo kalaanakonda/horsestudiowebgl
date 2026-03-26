@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zen Resort - Elite Z Logo Concepts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Manrope:wght@400;500&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --ink: #e9d4af;
+        --ink-soft: rgba(233, 212, 175, 0.65);
+        --bg-deep-green: #0f3a2e;
+        --bg-navy: #1b2f3d;
+        --bg-teal: #0e4b52;
+        --bg-forest: #1d4437;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Manrope", sans-serif;
+        background: radial-gradient(circle at 20% 10%, #254f45 0%, #0e201a 55%, #07120e 100%);
+        color: var(--ink);
+        min-height: 100vh;
+      }
+
+      .wrap {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 20px 60px;
+      }
+
+      .title {
+        text-align: center;
+        margin-bottom: 28px;
+      }
+
+      .title h1 {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(28px, 5vw, 52px);
+        letter-spacing: 0.1em;
+        margin: 0;
+        font-weight: 600;
+      }
+
+      .title p {
+        margin: 8px 0 0;
+        color: var(--ink-soft);
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        font-size: 12px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 20px;
+      }
+
+      .card {
+        padding: 20px;
+        border-radius: 18px;
+        border: 1px solid rgba(233, 212, 175, 0.2);
+        min-height: 340px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .a { background: var(--bg-navy); }
+      .b { background: var(--bg-deep-green); }
+      .c { background: var(--bg-teal); }
+      .d { background: var(--bg-forest); }
+
+      .mark {
+        width: 170px;
+        height: 170px;
+        margin: 10px auto 16px;
+        display: block;
+      }
+
+      .label {
+        text-align: center;
+      }
+
+      .name {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 30px;
+        letter-spacing: 0.1em;
+        margin: 0;
+      }
+
+      .sub {
+        margin: 4px 0 0;
+        color: var(--ink-soft);
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        font-size: 10px;
+      }
+
+      svg {
+        stroke: var(--ink);
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <section class="title">
+        <h1>ZEN RESORT</h1>
+        <p>Minimal elite Z monogram concepts</p>
+      </section>
+
+      <section class="grid">
+        <article class="card a">
+          <svg class="mark" viewBox="0 0 200 200" aria-label="Concept 1 - Framed Zen Z">
+            <path d="M100 22 128 35 142 62 156 100 142 138 128 165 100 178 72 165 58 138 44 100 58 62 72 35Z" stroke-width="3" opacity="0.8" />
+            <path d="M68 62h64l-56 76h56" stroke-width="7" />
+            <path d="M78 52h44M78 148h44" stroke-width="2" opacity="0.8" />
+          </svg>
+          <div class="label">
+            <p class="name">ZEN RESORT</p>
+            <p class="sub">Framed Monogram</p>
+          </div>
+        </article>
+
+        <article class="card b">
+          <svg class="mark" viewBox="0 0 200 200" aria-label="Concept 2 - Sunrise Z">
+            <circle cx="100" cy="100" r="77" stroke-width="3" />
+            <path d="M52 121c15-20 31-28 48-25 17 3 30 16 48 25" stroke-width="3" opacity="0.85" />
+            <path d="M72 67h56l-54 68h56" stroke-width="7" />
+            <path d="M100 36v14M120 41l-7 12M80 41l7 12" stroke-width="2" opacity="0.85" />
+          </svg>
+          <div class="label">
+            <p class="name">ZEN RESORT</p>
+            <p class="sub">Sunline Crest</p>
+          </div>
+        </article>
+
+        <article class="card c">
+          <svg class="mark" viewBox="0 0 200 200" aria-label="Concept 3 - Signature Z">
+            <circle cx="100" cy="100" r="78" stroke-width="3" opacity="0.85" />
+            <path d="M56 96c20-32 67-41 91-12" stroke-width="2.8" opacity="0.75" />
+            <path d="M56 126c30 16 69 16 91 0" stroke-width="2.8" opacity="0.75" />
+            <path d="M68 64h62l-58 72h60" stroke-width="8" />
+            <circle cx="53" cy="100" r="2.6" fill="var(--ink)" stroke="none" />
+            <circle cx="147" cy="100" r="2.6" fill="var(--ink)" stroke="none" />
+          </svg>
+          <div class="label">
+            <p class="name">ZEN RESORT</p>
+            <p class="sub">Signature Roundel</p>
+          </div>
+        </article>
+
+        <article class="card d">
+          <svg class="mark" viewBox="0 0 200 200" aria-label="Concept 4 - Leaf Z">
+            <path d="M100 20c44 0 80 36 80 80s-36 80-80 80-80-36-80-80 36-80 80-80Z" stroke-width="3" />
+            <path d="M64 58h74l-66 84h66" stroke-width="7" />
+            <path d="M86 84c10-15 18-23 28-27M86 116c10 15 18 23 28 27" stroke-width="2.6" opacity="0.8" />
+            <path d="M100 32v20" stroke-width="2" opacity="0.7" />
+            <path d="M100 148v20" stroke-width="2" opacity="0.7" />
+          </svg>
+          <div class="label">
+            <p class="name">ZEN RESORT</p>
+            <p class="sub">Organic Seal</p>
+          </div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

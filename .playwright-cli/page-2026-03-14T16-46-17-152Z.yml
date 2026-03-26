@@ -1,0 +1,15 @@
+- main [ref=e3]:
+  - generic [ref=e4]:
+    - heading "Ditherking Starter" [level=1] [ref=e5]
+    - paragraph [ref=e6]: Upload image/GLB, tweak in your own UI, then copy preset/code in your main app.
+  - generic [ref=e7]:
+    - generic [ref=e8]:
+      - generic [ref=e9]: Upload image (PNG/JPG/WebP)
+      - button "Upload image (PNG/JPG/WebP) Default demo image" [ref=e10]
+      - generic [ref=e11]: Default demo image
+    - generic [ref=e12]:
+      - generic [ref=e13]: Upload model (GLB)
+      - button "Upload model (GLB) Duck.glb (default)" [ref=e14]
+      - generic [ref=e15]: Duck.glb (default)
+  - heading "Image Dither" [level=2] [ref=e17]
+  - heading "GLB Dither" [level=2] [ref=e20]
