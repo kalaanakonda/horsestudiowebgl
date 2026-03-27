@@ -1,6 +1,6 @@
 {
   "name": "horsestudiowebgl",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Preset-driven WebGL shader toolkit from Horse Studio.",
   "keywords": [
     "shader",

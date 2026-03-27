@@ -56,4 +56,4 @@ export function createShaderPreset(shaderId) {
   }
 }
 
-export const shaderStudioVersion = '0.1.0'
+export const shaderStudioVersion = '0.1.1'
