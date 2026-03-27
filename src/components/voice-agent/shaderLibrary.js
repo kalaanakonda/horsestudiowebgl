@@ -859,17 +859,6 @@ void main() {
 
 export const SHADER_LIBRARY = [
   {
-    id: 'prismatic-disturbance',
-    name: 'Prismatic Disturbance',
-    mode: 'shader',
-    fragmentShader: prismaticDisturbanceFragmentShader,
-    defaultControls: {
-      colorA: '#f8fafc',
-      colorB: '#00e7ff',
-      colorC: '#ff2f7a',
-    },
-  },
-  {
     id: 'magnetic-curtains',
     name: 'Magnetic Curtains',
     mode: 'shader',
@@ -1119,11 +1108,6 @@ export const COMPONENT_FAMILY_META = {
 }
 
 export const PRESET_COMPONENT_BREAKDOWN = {
-  'prismatic-disturbance': {
-    families: ['field', 'interaction', 'motion', 'texture'],
-    summary: 'Diagonal chromatic beam with aggressive cursor-cut displacement and sticky trail coupling.',
-    components: ['Diagonal Beam Core', 'Cursor Shock Distortion', 'Bridge Trail', 'Film Grain'],
-  },
   'magnetic-curtains': {
     families: ['field', 'motion', 'interaction'],
     summary: 'Layered aurora curtains pulled by magnetic cursor force vectors.',
