@@ -140,7 +140,14 @@ function ShaderWorkbench({
     [allowed],
   )
 
-  const npmSnippet = `npm i horsestudiowebgl\n\nimport { createShaderPreset } from 'horsestudiowebgl'\n\nconst shader = createShaderPreset('${activeShader.id}')`
+  const liveVisibleControls = useMemo(
+    () => Object.fromEntries(
+      Object.entries(controls).filter(([key]) => allowed.has(key)),
+    ),
+    [controls, allowed],
+  )
+
+  const npmSnippet = `npm i horsestudiowebgl\n\nimport { createShaderPreset } from 'horsestudiowebgl'\n\nconst liveControls = ${JSON.stringify(liveVisibleControls, null, 2)}\n\nconst basePreset = createShaderPreset('${activeShader.id}')\n\nconst shader = {\n  ...basePreset,\n  defaultControls: {\n    ...basePreset.defaultControls,\n    ...liveControls,\n  },\n}`
 
   const onCopyNpm = async () => {
     try {
