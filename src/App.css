@@ -421,7 +421,7 @@
   min-height: 0;
   pointer-events: auto;
   max-height: 100%;
-  overflow: hidden;
+  overflow: visible;
   padding-right: 2px;
 }
 
@@ -1701,6 +1701,8 @@
   position: sticky;
   bottom: 0;
   z-index: 2;
+  max-height: min(36vh, 320px);
+  overflow: hidden;
   border: 1px solid var(--line-color);
   border-radius: 14px;
   background:
@@ -1722,6 +1724,7 @@
   line-height: 1.45;
   color: rgba(234, 246, 255, 0.92);
   overflow: auto;
+  max-height: min(20vh, 170px);
 }
 
 .npm-export-card pre::-webkit-scrollbar {

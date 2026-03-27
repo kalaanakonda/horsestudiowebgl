@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import {
   PRESET_COMPONENT_BREAKDOWN,
   SHADER_CONTROL_SECTIONS,
@@ -127,8 +127,15 @@ function ShaderWorkbench({
 }) {
   const [npmStatus, setNpmStatus] = useState('')
   const [tip, setTip] = useState({ visible: false, x: 0, y: 0 })
+  const settingsPanelRef = useRef(null)
   const allowed = MODE_CONTROL_ALLOWLIST[activeShader.mode] ?? DEFAULT_ALLOWED_CONTROLS
   const layerInfo = PRESET_COMPONENT_BREAKDOWN[activeShader.id]
+
+  useEffect(() => {
+    if (settingsPanelRef.current) {
+      settingsPanelRef.current.scrollTop = 0
+    }
+  }, [activeShader.id])
 
   const visibleSections = useMemo(
     () => SHADER_CONTROL_SECTIONS
@@ -209,7 +216,7 @@ function ShaderWorkbench({
       </aside>
 
       <div className="shader-workbench__right-column">
-        <aside className="shader-workbench__panel shader-workbench__panel--right">
+        <aside ref={settingsPanelRef} className="shader-workbench__panel shader-workbench__panel--right">
           <div className="shader-workbench__panel-head shader-workbench__panel-head--compact">
             <p className="shader-workbench__eyebrow">Shader Studio</p>
             <div className="shader-workbench__meta">

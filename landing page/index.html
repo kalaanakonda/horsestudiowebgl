@@ -50,7 +50,14 @@
             border: 1px solid var(--line);
             border-radius: 16px;
             overflow: hidden;
-            background: rgba(0, 0, 0, 0.08);
+            background:
+                linear-gradient(145deg, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.04) 28%, rgba(255, 255, 255, 0.01) 58%, rgba(0, 0, 0, 0.08) 100%);
+            backdrop-filter: blur(20px) saturate(145%);
+            -webkit-backdrop-filter: blur(20px) saturate(145%);
+            box-shadow:
+                0 24px 55px rgba(0, 0, 0, 0.34),
+                inset 0 1px 0 rgba(255, 255, 255, 0.28),
+                inset 0 -1px 0 rgba(255, 255, 255, 0.08);
             position: relative;
         }
 
@@ -275,7 +282,7 @@
 </head>
 <body>
     <video class="bg-video" autoplay muted loop playsinline>
-        <source src="file:///Users/nrgyg/Downloads/kling_20260324_%E4%BD%9C%E5%93%81_shot_1_1s__6043_0.webm" type="video/webm" />
+        <source src="./media/bg.webm" type="video/webm" />
     </video>
     <div class="shell">
         <div class="top">
@@ -314,7 +321,7 @@
             <section class="right">
                 <div class="preview">
                     <video autoplay muted loop playsinline>
-                        <source src="file:///Users/nrgyg/Documents/unicc.mp4" type="video/mp4" />
+                        <source src="./media/product-preview.mp4" type="video/mp4" />
                     </video>
                     <p class="preview-label">Live Product Preview</p>
                 </div>
