@@ -415,13 +415,13 @@
 
 .shader-workbench__right-column {
   width: min(324px, 29vw);
-  display: grid;
-  grid-auto-rows: max-content;
+  display: flex;
+  flex-direction: column;
   gap: 10px;
   min-height: 0;
   pointer-events: auto;
   max-height: 100%;
-  overflow: auto;
+  overflow: hidden;
   padding-right: 2px;
 }
 
@@ -707,7 +707,9 @@
 
 .shader-workbench__panel--right {
   width: 100%;
-  overflow: visible;
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow: auto;
 }
 
 .shader-workbench__panel-head {
@@ -1695,6 +1697,10 @@
 }
 
 .npm-export-window {
+  flex: 0 0 auto;
+  position: sticky;
+  bottom: 0;
+  z-index: 2;
   border: 1px solid var(--line-color);
   border-radius: 14px;
   background:
@@ -1898,7 +1904,6 @@
 
   .shader-workbench__right-column {
     width: min(100%, 280px);
-    grid-template-rows: minmax(0, 1fr) auto;
   }
 
   .voice-footer {

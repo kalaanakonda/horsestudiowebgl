@@ -140,7 +140,7 @@ function ShaderWorkbench({
     [allowed],
   )
 
-  const npmSnippet = `npm i @horsestudio/shader-studio\n\nimport { createShaderPreset } from '@horsestudio/shader-studio'\n\nconst shader = createShaderPreset('${activeShader.id}')`
+  const npmSnippet = `npm i horsestudiowebgl\n\nimport { createShaderPreset } from 'horsestudiowebgl'\n\nconst shader = createShaderPreset('${activeShader.id}')`
 
   const onCopyNpm = async () => {
     try {
@@ -283,7 +283,7 @@ function ShaderWorkbench({
             <button type="button" className="shader-reset-button npm-copy-button" onClick={onCopyNpm}>
               Copy Snippet
             </button>
-            <p className="npm-export-status">{npmStatus || 'Package scaffold prepared for @horsestudio/shader-studio'}</p>
+            <p className="npm-export-status">{npmStatus || 'Package scaffold prepared for horsestudiowebgl'}</p>
           </div>
         </section>
       </div>
