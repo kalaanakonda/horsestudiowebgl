@@ -117,9 +117,11 @@
             opacity: 0.95;
         }
 
-        .horse-icon svg {
+        .horse-icon img {
             width: 100%;
             height: 100%;
+            display: block;
+            filter: brightness(0) invert(1);
         }
 
         .eyebrow {
@@ -279,10 +281,7 @@
         <div class="layout">
             <section class="left">
                 <div class="horse-icon" aria-hidden="true">
-                    <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M13 18 L24 10 L30 15 L34 10 L47 18 L42 28 L42 42 L32 53 L22 42 L22 28 Z" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M22 28 C26 30, 38 30, 42 28" stroke="#ffffff" stroke-width="2.8" stroke-linecap="round"/>
-                    </svg>
+                    <img src="./media/horse-icon.svg" alt="Horse Studio logo" />
                 </div>
                 <p class="eyebrow">Horse Studio App</p>
                 <h1>WebGL, one command away.</h1>
