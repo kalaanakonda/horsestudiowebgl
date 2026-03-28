@@ -31,6 +31,26 @@
             background: #050505;
             display: flex;
             justify-content: center;
+            position: relative;
+        }
+
+        .bg-video {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -3;
+            filter: brightness(0.42) contrast(1.08) saturate(1.06);
+        }
+
+        .bg-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+            background:
+                radial-gradient(circle at 15% 10%, rgba(255, 255, 255, 0.12), transparent 40%),
+                linear-gradient(180deg, rgba(0, 0, 0, 0.22) 0%, rgba(0, 0, 0, 0.64) 100%);
         }
 
         .shell {
@@ -63,15 +83,7 @@
         }
 
         .shell::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 51.22%;
-            width: 1px;
-            background: var(--line);
-            z-index: 1;
-            pointer-events: none;
+            content: none;
         }
 
         .top {
@@ -97,8 +109,7 @@
         }
 
         .layout {
-            display: grid;
-            grid-template-columns: 1.05fr 1fr;
+            display: block;
             min-height: 76vh;
         }
 
@@ -108,6 +119,7 @@
             flex-direction: column;
             justify-content: center;
             gap: 18px;
+            max-width: 760px;
         }
 
         .horse-icon {
@@ -203,75 +215,19 @@
             padding-top: 12px;
         }
 
-        .right {
-            padding: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: transparent;
-        }
-
-        .preview {
-            width: 100%;
-            height: 100%;
-            min-height: 500px;
-            border-radius: 14px;
-            border: 1px solid rgba(255, 255, 255, 0.24);
-            background: transparent;
-            overflow: hidden;
-            position: relative;
-            box-shadow: 0 20px 44px rgba(0, 0, 0, 0.35);
-        }
-
-
-        .preview video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            transform: scale(1.1);
-            transform-origin: center;
-            filter: brightness(1.08) contrast(1.04) saturate(1.04);
-        }
-
-        .preview-label {
-            position: absolute;
-            left: 14px;
-            bottom: 12px;
-            z-index: 2;
-            font-family: var(--mono);
-            font-size: 9px;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: rgba(255, 255, 255, 0.82);
-            background: rgba(0, 0, 0, 0.35);
-            border: 1px solid rgba(255, 255, 255, 0.24);
-            border-radius: 999px;
-            padding: 4px 8px;
-        }
-
         @media (max-width: 980px) {
-            .layout {
-                grid-template-columns: 1fr;
-            }
-
             .left {
                 padding: 28px;
-                border-right: 0;
-                border-bottom: 1px solid var(--line);
-            }
-
-            .right {
-                padding: 16px;
-            }
-
-            .preview {
-                min-height: 380px;
             }
         }
     </style>
 </head>
 <body>
+    <video class="bg-video" autoplay muted loop playsinline>
+        <source src="./media/product-preview.mp4" type="video/mp4" />
+    </video>
+    <div class="bg-overlay" aria-hidden="true"></div>
+
     <div class="shell">
         <div class="top">
             <div>Horse Studio / <span>Landing</span></div>
@@ -286,8 +242,9 @@
                 <p class="eyebrow">Horse Studio App</p>
                 <h1>WebGL, one command away.</h1>
                 <p class="body">
-                    Horse Studio keeps things simple: run it locally, open the app, and start building.
-                    No account required, no payment gate, no onboarding friction. Just launch and create.
+                    Build cinematic interactive shader scenes, tune every visual parameter live,
+                    and export production-ready presets for your website in minutes.
+                    Horse Studio is your WebGL control room for fast concept-to-live workflows.
                 </p>
 
                 <div class="meta">
@@ -297,19 +254,10 @@
                 </div>
 
                 <div class="cta-row">
-                    <a class="cta" href="https://horse-studio-app.vercel.app/voice-agent" target="_blank" rel="noopener">Open Horse Studio <span>→</span></a>
+                    <a class="cta" href="https://horse-studio-app.vercel.app" target="_blank" rel="noopener">Open Horse Studio <span>→</span></a>
                 </div>
 
-                <p class="note">Live App: https://horse-studio-app.vercel.app/voice-agent</p>
-            </section>
-
-            <section class="right">
-                <div class="preview">
-                    <video autoplay muted loop playsinline>
-                        <source src="./media/product-preview.mp4" type="video/mp4" />
-                    </video>
-                    <p class="preview-label">Live Product Preview</p>
-                </div>
+                <p class="note">Live App: https://horse-studio-app.vercel.app</p>
             </section>
         </div>
     </div>
