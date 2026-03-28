@@ -33,17 +33,6 @@
             justify-content: center;
         }
 
-        .bg-video {
-            position: fixed;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -3;
-            filter: none;
-        }
-
-
         .shell {
             width: min(1260px, 94vw);
             margin: 34px 0;
@@ -281,9 +270,6 @@
     </style>
 </head>
 <body>
-    <video class="bg-video" autoplay muted loop playsinline>
-        <source src="./media/bg.webm" type="video/webm" />
-    </video>
     <div class="shell">
         <div class="top">
             <div>Horse Studio / <span>Landing</span></div>
@@ -312,10 +298,10 @@
                 </div>
 
                 <div class="cta-row">
-                    <a class="cta" href="http://localhost:5173/voice-agent" target="_blank" rel="noopener">Open Horse Studio <span>→</span></a>
+                    <a class="cta" href="https://experiment-two-plum.vercel.app/voice-agent" target="_blank" rel="noopener">Open Horse Studio <span>→</span></a>
                 </div>
 
-                <p class="note">Start command: npm run dev / Route: http://localhost:5173/voice-agent</p>
+                <p class="note">Live App: https://experiment-two-plum.vercel.app/voice-agent</p>
             </section>
 
             <section class="right">
