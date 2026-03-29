@@ -109,17 +109,23 @@
         }
 
         .layout {
-            display: block;
+            display: flex;
+            justify-content: center;
             min-height: 76vh;
         }
 
         .left {
-            padding: 38px;
+            width: min(920px, 100%);
+            min-height: 72vh;
+            margin: 0 auto;
+            padding: 54px 38px 114px;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            align-items: center;
+            text-align: center;
             gap: 18px;
-            max-width: 760px;
+            position: relative;
         }
 
         .horse-icon {
@@ -148,19 +154,19 @@
             font-size: clamp(28px, 3.8vw, 50px);
             line-height: 1;
             letter-spacing: -0.03em;
-            max-width: 560px;
+            max-width: 700px;
         }
 
         .body {
             font-size: 14px;
             line-height: 1.65;
             color: rgba(255, 255, 255, 0.74);
-            max-width: 560px;
+            max-width: 680px;
         }
 
         .meta {
             display: flex;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
             gap: 8px;
         }
 
@@ -178,8 +184,9 @@
 
         .cta-row {
             display: flex;
-            gap: 10px;
+            gap: 18px;
             flex-wrap: wrap;
+            justify-content: center;
         }
 
         .cta {
@@ -211,19 +218,50 @@
             letter-spacing: 0.08em;
             text-transform: uppercase;
             color: rgba(255, 255, 255, 0.42);
-            border-top: 1px solid rgba(255, 255, 255, 0.14);
-            padding-top: 12px;
+            text-align: right;
+            max-width: 48%;
+            line-height: 1.5;
+        }
+
+        .card-meta-row {
+            position: absolute;
+            left: 38px;
+            right: 38px;
+            bottom: 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 16px;
         }
 
         @media (max-width: 980px) {
             .left {
-                padding: 28px;
+                padding: 32px 28px 108px;
+                min-height: 66vh;
+            }
+
+            .card-meta-row {
+                left: 28px;
+                right: 28px;
+                bottom: 24px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .meta {
+                flex-wrap: wrap;
+            }
+
+            .note {
+                max-width: 100%;
+                text-align: left;
             }
         }
     </style>
 </head>
 <body>
     <video class="bg-video" autoplay muted loop playsinline>
+        <source src="./media/bg.webm" type="video/webm" />
         <source src="./media/product-preview.mp4" type="video/mp4" />
     </video>
     <div class="bg-overlay" aria-hidden="true"></div>
@@ -247,17 +285,18 @@
                     Horse Studio is your WebGL control room for fast concept-to-live workflows.
                 </p>
 
-                <div class="meta">
-                    <span class="chip">No Login</span>
-                    <span class="chip">Free Forever</span>
-                    <span class="chip">Fast Setup</span>
-                </div>
-
                 <div class="cta-row">
                     <a class="cta" href="https://horse-studio-app.vercel.app" target="_blank" rel="noopener">Open Horse Studio <span>→</span></a>
+                    <a class="cta" href="https://github.com/kalaanakonda/horsestudiowebgl" target="_blank" rel="noopener">View GitHub <span>→</span></a>
                 </div>
 
-                <p class="note">Live App: https://horse-studio-app.vercel.app</p>
+                <div class="card-meta-row">
+                    <div class="meta">
+                        <span class="chip">No Login</span>
+                        <span class="chip">Free Forever</span>
+                    </div>
+                    <p class="note">Live App: https://horse-studio-app.vercel.app</p>
+                </div>
             </section>
         </div>
     </div>
