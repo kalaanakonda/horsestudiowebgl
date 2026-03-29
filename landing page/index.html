@@ -238,6 +238,22 @@
             line-height: 1.5;
         }
 
+        .alpha-pill {
+            position: absolute;
+            top: 62px;
+            right: 22px;
+            font-family: var(--mono);
+            font-size: 8px;
+            letter-spacing: 0.11em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.58);
+            border: 1px dashed rgba(255, 255, 255, 0.28);
+            border-radius: 999px;
+            padding: 3px 8px;
+            background: rgba(0, 0, 0, 0.22);
+            pointer-events: none;
+        }
+
         .card-meta-row {
             position: absolute;
             left: 38px;
@@ -263,6 +279,11 @@
                 align-items: flex-start;
             }
 
+            .alpha-pill {
+                right: 16px;
+                top: 58px;
+            }
+
             .meta {
                 flex-wrap: wrap;
             }
@@ -282,6 +303,7 @@
     <div class="bg-overlay" aria-hidden="true"></div>
 
     <div class="shell">
+        <p class="alpha-pill">Very Rough Alpha</p>
         <div class="top">
             <div>Horse Studio / <span>Landing</span></div>
             <div><span>No Account</span> / Free Forever</div>
